@@ -1,0 +1,110 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #22d3ee;
+  --accent-2: #a78bfa;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: linear-gradient(180deg, var(--bg), #111827 60%);
+  color: var(--text);
+}
+
+.site-header, .site-footer {
+  text-align: center;
+  padding: 1.25rem 1rem;
+}
+.site-header h1 { margin: 0 0 .25rem; font-weight: 700; }
+.tagline { margin: 0; color: var(--muted); }
+.site-footer { color: var(--muted); }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+button {
+  appearance: none;
+  border: 1px solid #374151;
+  background: #0b1220;
+  color: var(--text);
+  padding: .6rem .9rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: transform .06s ease, border-color .2s ease, background .2s ease;
+}
+button:hover { border-color: var(--accent); }
+button:active { transform: translateY(1px); }
+
+.plot-section {
+  background: var(--panel);
+  border: 1px solid #1f2937;
+  border-radius: .75rem;
+  padding: .75rem;
+}
+
+canvas#plot {
+  display: block;
+  width: 100%;
+  height: min(60vh, 520px);
+  border-radius: .5rem;
+  background: #0b1220;
+}
+
+.caption { color: var(--muted); text-align: center; margin-top: .5rem; }
+
+.solution-panel {
+  margin-top: 1rem;
+  background: var(--panel);
+  border: 1px solid #1f2937;
+  border-radius: .75rem;
+  padding: .75rem;
+}
+.solution-panel.hidden { display: none; }
+.solution-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .5rem;
+}
+.solution-header .spacer { flex: 1; }
+.table-wrap {
+  overflow: auto;
+  max-height: 40vh;
+  border-top: 1px solid #1f2937;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+thead th {
+  position: sticky;
+  top: 0;
+  background: #0b1220;
+  color: var(--text);
+  text-align: left;
+  border-bottom: 1px solid #1f2937;
+  padding: .5rem;
+}
+tbody td {
+  padding: .4rem .5rem;
+  border-bottom: 1px solid #1f2937;
+  color: var(--muted);
+}
+tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.02); }

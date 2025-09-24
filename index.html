@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gradient Boosting Practice: Noisy Polynomial</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Gradient Boosting Practice</h1>
+      <p class="tagline">Explore a noisy polynomial dataset</p>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <button id="regenerateBtn" type="button">Regenerate Data</button>
+        <button id="downloadCsvBtn" type="button">Download CSV</button>
+  <button id="toggleSolutionBtn" type="button">Reveal Tree (depth 2) Solution</button>
+      </section>
+
+      <section class="plot-section">
+        <canvas id="plot" aria-label="Scatter plot of synthetic data" role="img"></canvas>
+  <p class="caption">Scatter of a noisy polynomial (quadratic or cubic). Optionally overlay a small regression tree (depth 2).</p>
+      </section>
+
+      <section id="solutionPanel" class="solution-panel hidden" aria-hidden="true">
+        <div class="solution-header">
+          <h2>Predictions (depth 2 tree)</h2>
+          <div class="spacer"></div>
+          <button id="downloadPredCsvBtn" type="button">Download Predictions CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table id="predictionsTable">
+            <thead>
+              <tr>
+                <th>x</th>
+                <th>y</th>
+                <th>y_pred</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>Front‑end only demo (no frameworks). Data is randomly generated in your browser.</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
